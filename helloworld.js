@@ -26,6 +26,6 @@ When you are done, you must run:
 to proceed. Your program will be tested, a report will be generated, and the lesson will be marked 'completed' if you are successful.
 
 -------------------------------------------------------------------------------
-/*
+*/
 
 console.log('HELLO WORLD');
