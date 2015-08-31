@@ -17,8 +17,8 @@ Instead of fs.readFileSync() you will want to use fs.readFile() and instead of u
 
 Remember that idiomatic Node.js callbacks normally have the signature:
 
-    function callback (err, data) { /* ... */ }
-/*
+    function callback (err, data) {  ...  }
+
 so you can check if an error occurred by checking whether the first argument is truthy. If there is no error, you should have your Buffer object as the second argument. As with readFileSync(), you can supply 'utf8' as the second argument and put the callback as the third argument and you will get a String instead of a Buffer.
 
 Documentation on the fs module can be found by pointing your browser here:
@@ -27,4 +27,12 @@ Documentation on the fs module can be found by pointing your browser here:
 -------------------------------------------------------------------------------
 */
 
+var fs = require('fs');
 
+var content = fs.readFile(process.argv[2], 'utf-8', function(err, data) {
+   if (err) { console.log(err); }
+   else {
+      newlines = data.split('\n').length - 1;
+      console.log(newlines);
+   }
+});
